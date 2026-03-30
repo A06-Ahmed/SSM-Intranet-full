@@ -1,0 +1,446 @@
+dbms,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,ORDINAL_POSITION,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH,CONSTRAINT_TYPE,REFERENCED_TABLE_SCHEMA,REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME
+mysql,intranet_db,activity_logs,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,activity_logs,user_id,2,bigint,NULL,"FOREIGN KEY",intranet_db,users,id
+mysql,intranet_db,announcements,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,announcements,author_id,4,bigint,NULL,"FOREIGN KEY",intranet_db,users,id
+mysql,intranet_db,announcements,target_department,5,bigint,NULL,"FOREIGN KEY",intranet_db,departments,id
+mysql,intranet_db,cache,key,1,varchar,255,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,cache_locks,key,1,varchar,255,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,departments,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,documents,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,documents,department_id,4,bigint,NULL,"FOREIGN KEY",intranet_db,departments,id
+mysql,intranet_db,documents,uploaded_by,5,bigint,NULL,"FOREIGN KEY",intranet_db,users,id
+mysql,intranet_db,employees,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,external_contacts,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,failed_jobs,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,failed_jobs,uuid,2,varchar,255,UNIQUE,NULL,NULL,NULL
+mysql,intranet_db,gallery,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,gallery,uploaded_by,5,bigint,NULL,"FOREIGN KEY",intranet_db,users,id
+mysql,intranet_db,jobs,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,job_batches,id,1,varchar,255,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,migrations,id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,news,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,news,author_id,5,bigint,NULL,"FOREIGN KEY",intranet_db,users,id
+mysql,intranet_db,roles,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,sessions,id,1,varchar,255,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,users,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,users,email,3,varchar,150,UNIQUE,NULL,NULL,NULL
+mysql,intranet_db,users,employee_id,6,bigint,NULL,"FOREIGN KEY",intranet_db,employees,id
+mysql,intranet_db,users,role_id,5,bigint,NULL,"FOREIGN KEY",intranet_db,roles,id
+mysql,phpmyadmin,pma__bookmark,id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__central_columns,db_name,1,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__central_columns,col_name,2,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,intranet_db,activity_logs,action,3,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,activity_logs,module,4,varchar,100,NULL,NULL,NULL,NULL
+mysql,intranet_db,activity_logs,created_at,5,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,announcements,title,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,announcements,content,3,text,65535,NULL,NULL,NULL,NULL
+mysql,intranet_db,announcements,expires_at,6,date,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,announcements,created_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,announcements,updated_at,8,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,cache,value,2,mediumtext,16777215,NULL,NULL,NULL,NULL
+mysql,intranet_db,cache,expiration,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,cache_locks,owner,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,cache_locks,expiration,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,departments,name,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,intranet_db,departments,description,3,text,65535,NULL,NULL,NULL,NULL
+mysql,intranet_db,departments,created_at,4,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,departments,updated_at,5,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,documents,title,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,documents,file_path,3,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,documents,created_at,6,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,documents,updated_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,employees,first_name,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,intranet_db,employees,last_name,3,varchar,100,NULL,NULL,NULL,NULL
+mysql,intranet_db,employees,email,4,varchar,150,NULL,NULL,NULL,NULL
+mysql,intranet_db,employees,phone,5,varchar,50,NULL,NULL,NULL,NULL
+mysql,intranet_db,employees,position,6,varchar,100,NULL,NULL,NULL,NULL
+mysql,intranet_db,employees,department_id,7,bigint,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,employees,office_location,8,varchar,100,NULL,NULL,NULL,NULL
+mysql,intranet_db,employees,profile_picture,9,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,employees,created_at,10,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,employees,updated_at,11,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,external_contacts,name,2,varchar,150,NULL,NULL,NULL,NULL
+mysql,intranet_db,external_contacts,company,3,varchar,150,NULL,NULL,NULL,NULL
+mysql,intranet_db,external_contacts,email,4,varchar,150,NULL,NULL,NULL,NULL
+mysql,intranet_db,external_contacts,phone,5,varchar,50,NULL,NULL,NULL,NULL
+mysql,intranet_db,external_contacts,contact_type,6,varchar,50,NULL,NULL,NULL,NULL
+mysql,intranet_db,external_contacts,created_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,external_contacts,updated_at,8,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,failed_jobs,connection,3,text,65535,NULL,NULL,NULL,NULL
+mysql,intranet_db,failed_jobs,queue,4,text,65535,NULL,NULL,NULL,NULL
+mysql,intranet_db,failed_jobs,payload,5,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,intranet_db,failed_jobs,exception,6,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,intranet_db,failed_jobs,failed_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,gallery,title,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,gallery,image_path,3,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,gallery,event_name,4,varchar,150,NULL,NULL,NULL,NULL
+mysql,intranet_db,gallery,created_at,6,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,gallery,updated_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,jobs,queue,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,jobs,payload,3,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,intranet_db,jobs,attempts,4,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,jobs,reserved_at,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,jobs,available_at,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,jobs,created_at,7,int,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,job_batches,name,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,job_batches,total_jobs,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,job_batches,pending_jobs,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,job_batches,failed_jobs,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,job_batches,failed_job_ids,6,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,intranet_db,job_batches,options,7,mediumtext,16777215,NULL,NULL,NULL,NULL
+mysql,intranet_db,job_batches,cancelled_at,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,job_batches,created_at,9,int,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,job_batches,finished_at,10,int,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,migrations,migration,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,migrations,batch,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,news,title,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,news,content,3,text,65535,NULL,NULL,NULL,NULL
+mysql,intranet_db,news,image,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,news,created_at,6,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,news,updated_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,roles,name,2,varchar,50,NULL,NULL,NULL,NULL
+mysql,intranet_db,roles,description,3,text,65535,NULL,NULL,NULL,NULL
+mysql,intranet_db,roles,created_at,4,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,roles,updated_at,5,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,sessions,user_id,2,bigint,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,sessions,ip_address,3,varchar,45,NULL,NULL,NULL,NULL
+mysql,intranet_db,sessions,user_agent,4,text,65535,NULL,NULL,NULL,NULL
+mysql,intranet_db,sessions,payload,5,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,intranet_db,sessions,last_activity,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,users,name,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,intranet_db,users,google_id,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,users,avatar,7,varchar,255,NULL,NULL,NULL,NULL
+mysql,intranet_db,users,created_at,8,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,intranet_db,users,updated_at,9,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__bookmark,dbase,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__bookmark,user,3,varchar,255,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__bookmark,label,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__bookmark,query,5,text,65535,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__central_columns,col_type,3,varchar,64,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__central_columns,col_length,4,text,65535,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__central_columns,col_collation,5,varchar,64,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__central_columns,col_isNull,6,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__column_info,id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__column_info,db_name,2,varchar,64,UNIQUE,NULL,NULL,NULL
+mysql,phpmyadmin,pma__column_info,table_name,3,varchar,64,UNIQUE,NULL,NULL,NULL
+mysql,phpmyadmin,pma__column_info,column_name,4,varchar,64,UNIQUE,NULL,NULL,NULL
+mysql,phpmyadmin,pma__designer_settings,username,1,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__export_templates,id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__export_templates,username,2,varchar,64,UNIQUE,NULL,NULL,NULL
+mysql,phpmyadmin,pma__export_templates,export_type,3,varchar,10,UNIQUE,NULL,NULL,NULL
+mysql,phpmyadmin,pma__export_templates,template_name,4,varchar,64,UNIQUE,NULL,NULL,NULL
+mysql,phpmyadmin,pma__favorite,username,1,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__history,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__navigationhiding,username,1,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__navigationhiding,item_name,2,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__navigationhiding,item_type,3,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__navigationhiding,db_name,4,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__navigationhiding,table_name,5,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__pdf_pages,page_nr,2,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__recent,username,1,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__relation,master_db,1,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__relation,master_table,2,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__relation,master_field,3,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__savedsearches,id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__savedsearches,username,2,varchar,64,UNIQUE,NULL,NULL,NULL
+mysql,phpmyadmin,pma__savedsearches,db_name,3,varchar,64,UNIQUE,NULL,NULL,NULL
+mysql,phpmyadmin,pma__savedsearches,search_name,4,varchar,64,UNIQUE,NULL,NULL,NULL
+mysql,phpmyadmin,pma__table_coords,db_name,1,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__table_coords,table_name,2,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__table_coords,pdf_page_number,3,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__table_info,db_name,1,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__table_info,table_name,2,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__table_uiprefs,username,1,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__table_uiprefs,db_name,2,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__table_uiprefs,table_name,3,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__tracking,db_name,1,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__tracking,table_name,2,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__tracking,version,3,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__userconfig,username,1,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__usergroups,usergroup,1,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__usergroups,tab,2,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__usergroups,allowed,3,enum,1,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__users,username,1,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__users,usergroup,2,varchar,64,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smmintranet,cache,key,1,varchar,255,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smmintranet,cache_locks,key,1,varchar,255,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smmintranet,failed_jobs,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smmintranet,failed_jobs,uuid,2,varchar,255,UNIQUE,NULL,NULL,NULL
+mysql,smmintranet,jobs,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smmintranet,job_batches,id,1,varchar,255,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smmintranet,migrations,id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,phpmyadmin,pma__central_columns,col_extra,7,varchar,255,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__central_columns,col_default,8,text,65535,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__column_info,comment,5,varchar,255,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__column_info,mimetype,6,varchar,255,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__column_info,transformation,7,varchar,255,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__column_info,transformation_options,8,varchar,255,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__column_info,input_transformation,9,varchar,255,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__column_info,input_transformation_options,10,varchar,255,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__designer_settings,settings_data,2,text,65535,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__export_templates,template_data,5,text,65535,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__favorite,tables,2,text,65535,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__history,username,2,varchar,64,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__history,db,3,varchar,64,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__history,table,4,varchar,64,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__history,timevalue,5,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__history,sqlquery,6,text,65535,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__pdf_pages,db_name,1,varchar,64,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__pdf_pages,page_descr,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__recent,tables,2,text,65535,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__relation,foreign_db,4,varchar,64,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__relation,foreign_table,5,varchar,64,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__relation,foreign_field,6,varchar,64,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__savedsearches,search_data,5,text,65535,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__table_coords,x,4,float,NULL,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__table_coords,y,5,float,NULL,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__table_info,display_field,3,varchar,64,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__table_uiprefs,prefs,4,text,65535,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__table_uiprefs,last_update,5,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__tracking,date_created,4,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__tracking,date_updated,5,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__tracking,schema_snapshot,6,text,65535,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__tracking,schema_sql,7,text,65535,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__tracking,data_sql,8,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__tracking,tracking,9,set,188,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__tracking,tracking_active,10,int,NULL,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__userconfig,timevalue,2,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,phpmyadmin,pma__userconfig,config_data,3,text,65535,NULL,NULL,NULL,NULL
+mysql,smmintranet,cache,value,2,mediumtext,16777215,NULL,NULL,NULL,NULL
+mysql,smmintranet,cache,expiration,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,cache_locks,owner,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smmintranet,cache_locks,expiration,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,failed_jobs,connection,3,text,65535,NULL,NULL,NULL,NULL
+mysql,smmintranet,failed_jobs,queue,4,text,65535,NULL,NULL,NULL,NULL
+mysql,smmintranet,failed_jobs,payload,5,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,smmintranet,failed_jobs,exception,6,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,smmintranet,failed_jobs,failed_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,jobs,queue,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smmintranet,jobs,payload,3,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,smmintranet,jobs,attempts,4,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,jobs,reserved_at,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,jobs,available_at,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,jobs,created_at,7,int,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,job_batches,name,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smmintranet,job_batches,total_jobs,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,job_batches,pending_jobs,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,job_batches,failed_jobs,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,job_batches,failed_job_ids,6,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,smmintranet,job_batches,options,7,mediumtext,16777215,NULL,NULL,NULL,NULL
+mysql,smmintranet,job_batches,cancelled_at,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,job_batches,created_at,9,int,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,job_batches,finished_at,10,int,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,migrations,migration,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smmintranet,personal_access_tokens,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smmintranet,personal_access_tokens,token,5,varchar,64,UNIQUE,NULL,NULL,NULL
+mysql,smmintranet,users,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smmintranet,users,email,3,varchar,255,UNIQUE,NULL,NULL,NULL
+mysql,smm_bacend,activity_logs,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,activity_logs,user_id,2,bigint,NULL,"FOREIGN KEY",smm_bacend,users,id
+mysql,smm_bacend,announcements,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,announcements,author_id,5,bigint,NULL,"FOREIGN KEY",smm_bacend,users,id
+mysql,smm_bacend,applications,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,applications,user_id,2,bigint,NULL,"FOREIGN KEY",smm_bacend,users,id
+mysql,smm_bacend,audit_logs,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,audit_logs,user_id,2,bigint,NULL,"FOREIGN KEY",smm_bacend,users,id
+mysql,smm_bacend,cache,key,1,varchar,255,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,cache_locks,key,1,varchar,255,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,contacts,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,departments,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,employees,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,employees,matricule,3,varchar,255,UNIQUE,NULL,NULL,NULL
+mysql,smm_bacend,employees,department_id,7,bigint,NULL,"FOREIGN KEY",smm_bacend,departments,id
+mysql,smm_bacend,employees,user_id,2,bigint,NULL,"FOREIGN KEY",smm_bacend,users,id
+mysql,smm_bacend,failed_jobs,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,failed_jobs,uuid,2,varchar,255,UNIQUE,NULL,NULL,NULL
+mysql,smm_bacend,gallery,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,gallery,uploaded_by,5,bigint,NULL,"FOREIGN KEY",smm_bacend,users,id
+mysql,smm_bacend,gallery_images,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,gallery_images,gallery_id,2,bigint,NULL,"FOREIGN KEY",smm_bacend,gallery,id
+mysql,smm_bacend,jobs,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,job_batches,id,1,varchar,255,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smmintranet,migrations,batch,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,personal_access_tokens,tokenable_type,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smmintranet,personal_access_tokens,tokenable_id,3,bigint,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,personal_access_tokens,name,4,text,65535,NULL,NULL,NULL,NULL
+mysql,smmintranet,personal_access_tokens,abilities,6,text,65535,NULL,NULL,NULL,NULL
+mysql,smmintranet,personal_access_tokens,last_used_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,personal_access_tokens,expires_at,8,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,personal_access_tokens,created_at,9,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,personal_access_tokens,updated_at,10,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,users,name,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smmintranet,users,password,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,smmintranet,users,role,5,enum,10,NULL,NULL,NULL,NULL
+mysql,smmintranet,users,remember_token,6,varchar,100,NULL,NULL,NULL,NULL
+mysql,smmintranet,users,created_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smmintranet,users,updated_at,8,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,activity_logs,action,3,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,activity_logs,module,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,activity_logs,description,5,text,65535,NULL,NULL,NULL,NULL
+mysql,smm_bacend,activity_logs,ip_address,6,varchar,45,NULL,NULL,NULL,NULL
+mysql,smm_bacend,activity_logs,created_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,announcements,title,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,announcements,content,3,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,smm_bacend,announcements,priority_status,4,varchar,20,NULL,NULL,NULL,NULL
+mysql,smm_bacend,announcements,is_published,6,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,announcements,published_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,announcements,created_at,8,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,announcements,updated_at,9,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,announcements,deleted_at,10,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,applications,type,3,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,applications,status,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,applications,payload,5,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,smm_bacend,applications,created_at,6,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,applications,updated_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,audit_logs,action,3,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,audit_logs,module,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,audit_logs,description,5,text,65535,NULL,NULL,NULL,NULL
+mysql,smm_bacend,audit_logs,ip_address,6,varchar,45,NULL,NULL,NULL,NULL
+mysql,smm_bacend,audit_logs,created_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,cache,value,2,mediumtext,16777215,NULL,NULL,NULL,NULL
+mysql,smm_bacend,cache,expiration,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,cache_locks,owner,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,cache_locks,expiration,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,contacts,name,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,contacts,phone,3,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,contacts,email,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,contacts,department,5,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,contacts,company,6,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,contacts,type,7,enum,8,NULL,NULL,NULL,NULL
+mysql,smm_bacend,contacts,created_at,8,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,contacts,updated_at,9,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,departments,name,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,departments,description,3,text,65535,NULL,NULL,NULL,NULL
+mysql,smm_bacend,departments,manager_id,4,bigint,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,departments,created_at,5,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,departments,updated_at,6,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,departments,deleted_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,employees,position,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,employees,phone,5,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,employees,office_location,6,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,employees,photo_url,8,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,employees,hire_date,9,date,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,employees,status,10,enum,8,NULL,NULL,NULL,NULL
+mysql,smm_bacend,employees,created_at,11,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,employees,updated_at,12,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,employees,deleted_at,13,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,failed_jobs,connection,3,text,65535,NULL,NULL,NULL,NULL
+mysql,smm_bacend,failed_jobs,queue,4,text,65535,NULL,NULL,NULL,NULL
+mysql,smm_bacend,failed_jobs,payload,5,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,smm_bacend,failed_jobs,exception,6,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,smm_bacend,failed_jobs,failed_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,gallery,title,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,gallery,description,3,text,65535,NULL,NULL,NULL,NULL
+mysql,smm_bacend,gallery,image_url,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,gallery,created_at,6,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,gallery,updated_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,gallery,deleted_at,8,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,gallery_images,image_url,3,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,gallery_images,created_at,4,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,gallery_images,updated_at,5,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,jobs,queue,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,jobs,payload,3,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,smm_bacend,jobs,attempts,4,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,jobs,reserved_at,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,jobs,available_at,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,jobs,created_at,7,int,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,job_batches,name,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,job_batches,total_jobs,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,job_batches,pending_jobs,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,job_batches,failed_jobs,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,job_batches,failed_job_ids,6,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,smm_bacend,job_batches,options,7,mediumtext,16777215,NULL,NULL,NULL,NULL
+mysql,smm_bacend,job_batches,cancelled_at,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,job_batches,created_at,9,int,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,migrations,id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,news,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,news,author_id,5,bigint,NULL,"FOREIGN KEY",smm_bacend,users,id
+mysql,smm_bacend,notifications,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,password_reset_tokens,email,1,varchar,255,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,permissions,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,permissions,name,2,varchar,255,UNIQUE,NULL,NULL,NULL
+mysql,smm_bacend,permission_role,permission_id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,permission_role,role_id,2,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,permission_role,permission_id,1,bigint,NULL,"FOREIGN KEY",smm_bacend,permissions,id
+mysql,smm_bacend,permission_role,role_id,2,bigint,NULL,"FOREIGN KEY",smm_bacend,roles,id
+mysql,smm_bacend,projects,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,projects,created_by,7,bigint,NULL,"FOREIGN KEY",smm_bacend,users,id
+mysql,smm_bacend,refresh_tokens,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,refresh_tokens,token_hash,3,varchar,255,UNIQUE,NULL,NULL,NULL
+mysql,smm_bacend,refresh_tokens,user_id,2,bigint,NULL,"FOREIGN KEY",smm_bacend,users,id
+mysql,smm_bacend,roles,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,roles,name,2,varchar,255,UNIQUE,NULL,NULL,NULL
+mysql,smm_bacend,role_permission,role_id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,role_permission,permission_id,2,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,role_permission,permission_id,2,bigint,NULL,"FOREIGN KEY",smm_bacend,permissions,id
+mysql,smm_bacend,role_permission,role_id,1,bigint,NULL,"FOREIGN KEY",smm_bacend,roles,id
+mysql,smm_bacend,role_user,role_id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,role_user,user_id,2,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,role_user,role_id,1,bigint,NULL,"FOREIGN KEY",smm_bacend,roles,id
+mysql,smm_bacend,role_user,user_id,2,bigint,NULL,"FOREIGN KEY",smm_bacend,users,id
+mysql,smm_bacend,sessions,id,1,varchar,255,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,tasks,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,tasks,assigned_to,6,bigint,NULL,"FOREIGN KEY",smm_bacend,users,id
+mysql,smm_bacend,tasks,project_id,2,bigint,NULL,"FOREIGN KEY",smm_bacend,projects,id
+mysql,smm_bacend,users,id,1,bigint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,smm_bacend,users,email,4,varchar,255,UNIQUE,NULL,NULL,NULL
+mysql,smm_bacend,users,department_id,7,bigint,NULL,"FOREIGN KEY",smm_bacend,departments,id
+mysql,smm_bacend,job_batches,finished_at,10,int,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,migrations,migration,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,migrations,batch,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,news,title,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,news,content,3,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,smm_bacend,news,image_url,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,news,is_published,6,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,news,published_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,news,created_at,8,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,news,updated_at,9,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,news,deleted_at,10,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,notifications,title,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,notifications,body,3,text,65535,NULL,NULL,NULL,NULL
+mysql,smm_bacend,notifications,type,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,notifications,related_id,5,bigint,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,notifications,expires_at,6,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,notifications,created_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,notifications,updated_at,8,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,password_reset_tokens,token,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,password_reset_tokens,created_at,3,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,permissions,module,3,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,permissions,created_at,4,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,permissions,updated_at,5,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,projects,name,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,projects,description,3,text,65535,NULL,NULL,NULL,NULL
+mysql,smm_bacend,projects,status,4,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,projects,start_date,5,date,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,projects,end_date,6,date,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,projects,created_at,8,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,projects,updated_at,9,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,projects,deleted_at,10,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,refresh_tokens,expires_at,4,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,refresh_tokens,revoked_at,5,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,refresh_tokens,created_at,6,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,refresh_tokens,updated_at,7,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,roles,description,3,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,roles,created_at,4,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,roles,updated_at,5,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,sessions,user_id,2,bigint,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,sessions,ip_address,3,varchar,45,NULL,NULL,NULL,NULL
+mysql,smm_bacend,sessions,user_agent,4,text,65535,NULL,NULL,NULL,NULL
+mysql,smm_bacend,sessions,payload,5,longtext,4294967295,NULL,NULL,NULL,NULL
+mysql,smm_bacend,sessions,last_activity,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,tasks,title,3,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,tasks,description,4,text,65535,NULL,NULL,NULL,NULL
+mysql,smm_bacend,tasks,status,5,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,tasks,due_date,7,date,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,tasks,created_at,8,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,tasks,updated_at,9,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,tasks,deleted_at,10,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,users,first_name,2,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,users,last_name,3,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,users,email_verified_at,5,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,users,password,6,varchar,255,NULL,NULL,NULL,NULL
+mysql,smm_bacend,users,is_active,8,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,users,remember_token,9,varchar,100,NULL,NULL,NULL,NULL
+mysql,smm_bacend,users,created_at,10,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,smm_bacend,users,updated_at,11,timestamp,NULL,NULL,NULL,NULL,NULL
